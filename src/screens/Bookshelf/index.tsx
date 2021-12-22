@@ -12,7 +12,7 @@ interface Category {
   display_name: string;
 }
 
-export function Home() {
+export function Bookshelf() {
   const [recomendations, setRecomendations] = useState<Book[]>([]);
   const [weeklyMostRead, setWeeklyMostRead] = useState<Book[]>([]);
   const [categories, setCategories] = useState<Category[]>([]);
@@ -71,7 +71,7 @@ export function Home() {
 
   return (
     <View>
-      <Text>Home</Text>
+      <Text>Bookshelf</Text>
     </View>
   );
 }

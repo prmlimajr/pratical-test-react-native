@@ -1,4 +1,3 @@
-import { Home } from './src/screens/Home';
 import AppLoading from 'expo-app-loading';
 import { useFonts } from 'expo-font';
 import {
@@ -6,6 +5,7 @@ import {
   Lato_700Bold,
   Lato_900Black,
 } from '@expo-google-fonts/lato';
+import { Routes } from './src/routes';
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -18,5 +18,5 @@ export default function App() {
     return <AppLoading />;
   }
 
-  return <Home />;
+  return <Routes />;
 }
