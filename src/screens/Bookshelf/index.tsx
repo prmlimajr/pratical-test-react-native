@@ -100,6 +100,22 @@ export function Bookshelf() {
           showsHorizontalScrollIndicator={false}
           horizontal
         />
+
+        <SectionTitle>Os mais lidos da semana</SectionTitle>
+
+        <FlatList
+          data={weeklyMostRead}
+          keyExtractor={(item) => Math.random().toString()}
+          renderItem={({ item }) => (
+            <Book
+              author={item.author}
+              book_image={item.book_image}
+              title={item.title}
+            />
+          )}
+          showsHorizontalScrollIndicator={false}
+          horizontal
+        />
       </ScrollableContainer>
     </Container>
   );

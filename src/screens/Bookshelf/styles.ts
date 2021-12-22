@@ -5,7 +5,9 @@ export const Container = styled.View`
   padding: 16px;
 `;
 
-export const ScrollableContainer = styled.ScrollView``;
+export const ScrollableContainer = styled.ScrollView`
+  height: 584px;
+`;
 
 export const SectionTitle = styled.Text`
   margin-top: 32px;
