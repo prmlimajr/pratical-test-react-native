@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Text, View } from 'react-native';
+import { Header } from '../../components/Header';
 import { api } from '../../services/api';
 
 interface Book {
@@ -69,9 +69,5 @@ export function Bookshelf() {
     console.log({ categories });
   }, []);
 
-  return (
-    <View>
-      <Text>Bookshelf</Text>
-    </View>
-  );
+  return <Header title="Bookshelf" user />;
 }

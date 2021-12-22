@@ -6,6 +6,8 @@ import {
   Lato_900Black,
 } from '@expo-google-fonts/lato';
 import { Routes } from './src/routes';
+import { ThemeProvider } from 'styled-components/native';
+import theme from './src/global/theme';
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -18,5 +20,9 @@ export default function App() {
     return <AppLoading />;
   }
 
-  return <Routes />;
+  return (
+    <ThemeProvider theme={theme}>
+      <Routes />
+    </ThemeProvider>
+  );
 }
