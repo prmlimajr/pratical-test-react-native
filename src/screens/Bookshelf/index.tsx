@@ -1,6 +1,9 @@
 import { useEffect, useState } from 'react';
 import { Header } from '../../components/Header';
+import { SearchBar } from '../../components/SearchBar';
 import { api } from '../../services/api';
+
+import { Container, ScrollableContainer } from './styles';
 
 interface Book {
   author: string;
@@ -69,5 +72,13 @@ export function Bookshelf() {
     console.log({ categories });
   }, []);
 
-  return <Header title="Bookshelf" user />;
+  return (
+    <Container>
+      <Header title="Bookshelf" user />
+
+      <ScrollableContainer>
+        <SearchBar />
+      </ScrollableContainer>
+    </Container>
+  );
 }

@@ -12,9 +12,9 @@ export const Container = styled.SafeAreaView`
 export const Title = styled.Text`
   font-size: ${RFValue(24)}px;
   font-family: ${({ theme }) => theme.fonts.title900};
-  margin-left: 24px;
+  margin-left: 12px;
 `;
 
 export const IconWrapper = styled.View`
-  margin-right: 12px;
+  margin-right: 4px;
 `;

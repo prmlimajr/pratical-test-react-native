@@ -4,6 +4,7 @@ export default {
     primary80: '#25282B',
     primary50: '#828282',
     primary20: '#E5E5E5',
+    primary10: '#f2f2f2',
 
     secondary100: '#FF9900',
   },
