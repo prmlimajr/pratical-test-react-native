@@ -4,8 +4,10 @@ import { Book } from '../../components/Book';
 import { Header } from '../../components/Header';
 import { SearchBar } from '../../components/SearchBar';
 import { api } from '../../services/api';
+import { Category } from '../../components/Category';
 
 import { Container, ScrollableContainer, SectionTitle } from './styles';
+import { getRandomColor } from '../../utils/getRandomColor';
 
 interface Book {
   author: string;
@@ -13,14 +15,10 @@ interface Book {
   title: string;
 }
 
-interface Category {
-  display_name: string;
-}
-
 export function Bookshelf() {
   const [recomendations, setRecomendations] = useState<Book[]>([]);
   const [weeklyMostRead, setWeeklyMostRead] = useState<Book[]>([]);
-  const [categories, setCategories] = useState<Category[]>([]);
+  const [categories, setCategories] = useState<string[]>([]);
 
   useEffect(() => {
     async function getBooks() {
@@ -57,12 +55,10 @@ export function Bookshelf() {
 
       const list = result.data.results;
 
-      const categories = [] as Category[];
+      const categories = [] as string[];
 
       list.forEach((category) => {
-        categories.push({
-          display_name: category.display_name,
-        });
+        categories.push(category.display_name);
       });
 
       setCategories(categories);
@@ -70,8 +66,6 @@ export function Bookshelf() {
 
     getBooks();
     getCategories();
-
-    console.log({ categories });
   }, []);
 
   return (
@@ -93,6 +87,16 @@ export function Bookshelf() {
               title={item.title}
             />
           )}
+          showsHorizontalScrollIndicator={false}
+          horizontal
+        />
+
+        <SectionTitle>Categorias</SectionTitle>
+
+        <FlatList
+          data={categories}
+          keyExtractor={(item) => Math.random().toString()}
+          renderItem={({ item }) => <Category name={item} />}
           showsHorizontalScrollIndicator={false}
           horizontal
         />

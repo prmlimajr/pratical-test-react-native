@@ -8,7 +8,7 @@ export const Container = styled.View`
 export const ScrollableContainer = styled.ScrollView``;
 
 export const SectionTitle = styled.Text`
-  margin-top: 24px;
+  margin-top: 32px;
   font-size: ${RFValue(18)}px;
   font-family: ${({ theme }) => theme.fonts.title900};
 `;
