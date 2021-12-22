@@ -1,9 +1,11 @@
 import { useEffect, useState } from 'react';
+import { FlatList } from 'react-native';
+import { Book } from '../../components/Book';
 import { Header } from '../../components/Header';
 import { SearchBar } from '../../components/SearchBar';
 import { api } from '../../services/api';
 
-import { Container, ScrollableContainer } from './styles';
+import { Container, ScrollableContainer, SectionTitle } from './styles';
 
 interface Book {
   author: string;
@@ -78,6 +80,22 @@ export function Bookshelf() {
 
       <ScrollableContainer>
         <SearchBar />
+
+        <SectionTitle>Para Você</SectionTitle>
+
+        <FlatList
+          data={recomendations}
+          keyExtractor={(item) => Math.random().toString()}
+          renderItem={({ item }) => (
+            <Book
+              author={item.author}
+              book_image={item.book_image}
+              title={item.title}
+            />
+          )}
+          showsHorizontalScrollIndicator={false}
+          horizontal
+        />
       </ScrollableContainer>
     </Container>
   );

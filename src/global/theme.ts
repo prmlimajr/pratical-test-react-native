@@ -3,6 +3,7 @@ export default {
     primary100: '#333333',
     primary80: '#25282B',
     primary50: '#828282',
+    primary40: '#4f4f4f',
     primary20: '#E5E5E5',
     primary10: '#f2f2f2',
 
